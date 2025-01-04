@@ -38,3 +38,26 @@ export const getNextQuadrant = (currentQuadrant: QuadrantType) => {
     if(index > 3) index = index % orderedQuadrantList.length
     return orderedQuadrantList[index]
 }
+
+/**
+ * This function returns indexes of safe cells for given quadrant
+ */
+export const getSafeQuadrantCells = (quadrant: QuadrantType) => {
+    const { column, row } = cellIndexes[quadrant]
+    const secondCell = column[0]+1;
+    const secondLastCell = row[1]-2;
+    return [secondCell, secondLastCell]
+}
+
+/**
+ * This function returns the background color className for quadrant
+ */
+export const getBackgroundColorClassName = (quadrant: QuadrantType) => {
+    const colors = {
+        [QuadrantType.Yellow]: "bg-yellow-500",
+        [QuadrantType.Green]: "bg-green-500",
+        [QuadrantType.Blue]: "bg-blue-500",
+        [QuadrantType.Red]: "bg-red-500"
+    }
+    return colors[quadrant]
+}

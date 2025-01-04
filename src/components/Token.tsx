@@ -55,7 +55,7 @@ const Token: React.FC<ITokenProps> = ({
             onClick={moveToken} 
             ref={tokenRef} 
             className={classNames(
-                "w-[35px] h-[35px] absolute z-10 shadow-lg rounded-full cursor-pointer",
+                "w-[35px] h-[35px] absolute z-10 shadow-xl rounded-full cursor-pointer border-2 border-white",
                 { "bg-yellow-500": QuadrantType.Yellow === quadrant },
                 { "bg-green-500": QuadrantType.Green === quadrant },
                 { "bg-blue-500": QuadrantType.Blue === quadrant },
