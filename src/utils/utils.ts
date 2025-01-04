@@ -5,10 +5,10 @@ import { QuadrantType } from "../constants/constants"
  */
 
 export const cellIndexes = {
-    [QuadrantType.Blue]: { column: [0, 6], row: [6, 12], home: [66, 72] },
-    [QuadrantType.Yellow]: { column: [12, 18], row: [18, 24], home: [60, 66] },
-    [QuadrantType.Green]: { column: [24, 30], row: [30, 36], home: [54, 60] },
-    [QuadrantType.Red]: { column: [36, 42], row: [42, 48], home: [48, 54] },
+    [QuadrantType.Blue]: { column: [0, 6], row: [6, 12], home: [66, 72], lock: [73, 77], won: [77,81] },
+    [QuadrantType.Yellow]: { column: [12, 18], row: [18, 24], home: [60, 66], lock: [81, 85], won: [85, 89] },
+    [QuadrantType.Green]: { column: [24, 30], row: [30, 36], home: [54, 60], lock: [89, 93], won: [93, 97] },
+    [QuadrantType.Red]: { column: [36, 42], row: [42, 48], home: [48, 54], lock: [97, 101], won: [101, 105] },
 }
 
 /**

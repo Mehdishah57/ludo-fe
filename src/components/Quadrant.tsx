@@ -23,9 +23,16 @@ const Quadrant: React.FC<IQuadrantProps> = ({
         )}>
             {/* Safe House */}
             <div className={classNames(
-                "w-[75%] h-[75%] absolute left-0 bottom-0",
+                "w-[75%] h-[75%] absolute left-0 bottom-0 flex justify-center items-center",
                 getBackgroundColorClassName(type)
             )}>
+                <div className="flex flex-row flex-wrap max-w-[80px] gap-2">
+                    {cells.slice(address.lock[0], address.lock[1]).map((num) => <div 
+                        key={num} 
+                        id={num.toString()} 
+                        className="flex w-[35px] h-[35px] rounded-full bg-white"
+                    ></div>)}
+                </div>
             </div>
 
             <div className="flex flex-col-reverse left-[75%] h-[75%] bottom-0 absolute">
