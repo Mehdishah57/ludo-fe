@@ -1,9 +1,7 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
+import React, { useLayoutEffect, useRef, useState } from "react"
 import classNames from "classnames"
 
-import { QuadrantType } from "../constants/constants"
-
-import { cellIndexes, getInitialPosition, getNextQuadrant } from "../utils/utils"
+import { cellIndexes, getBackgroundColorClassName, getInitialPosition, getNextQuadrant } from "../utils/utils"
 
 import { ITokenProps } from "../types/components"
 
@@ -21,8 +19,6 @@ const Token: React.FC<ITokenProps> = ({
             parent.appendChild(tokenRef.current)
         }
     }, [])
-
-    useEffect(() => {}, [])
 
     const moveToken = () => {
         if(!tokenRef.current) return;
@@ -56,10 +52,7 @@ const Token: React.FC<ITokenProps> = ({
             ref={tokenRef} 
             className={classNames(
                 "w-[35px] h-[35px] absolute z-10 shadow-xl rounded-full cursor-pointer border-2 border-white",
-                { "bg-yellow-500": QuadrantType.Yellow === quadrant },
-                { "bg-green-500": QuadrantType.Green === quadrant },
-                { "bg-blue-500": QuadrantType.Blue === quadrant },
-                { "bg-red-500": QuadrantType.Red === quadrant },
+                getBackgroundColorClassName(quadrant),
             )}
         >
         </div>

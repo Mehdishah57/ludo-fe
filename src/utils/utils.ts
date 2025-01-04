@@ -19,13 +19,7 @@ export const getCellAddresses = (quadrant: QuadrantType) => {
 }
 
 export const getInitialPosition = (quadrant: QuadrantType) => {
-    const initialPositionMap = {
-        [QuadrantType.Blue]: 1,
-        [QuadrantType.Yellow]: 13,
-        [QuadrantType.Green]: 25,
-        [QuadrantType.Red]: 37,
-    }
-    return initialPositionMap[quadrant]
+    return cellIndexes[quadrant].column[0]+1
 }
 
 /**
