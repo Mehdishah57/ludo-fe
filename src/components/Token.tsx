@@ -38,7 +38,7 @@ const Token: React.FC<ITokenProps> = ({
             }
         }
         else {
-            if(currentPosition >= currentPaths.column[0] && currentPosition < currentPaths.row[1]) {
+            if(currentPosition >= currentPaths.column[0] && currentPosition < currentPaths.row[1]-1) {
                 setCurrentPosition(prev => prev + 1)
             }
             else if(currentPosition === currentPaths.row[1]-1) {
