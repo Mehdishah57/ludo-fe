@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="h-screen overflow-auto flex justify-center items-center">
-      <div className="h-screen w-full flex items-center max-w-[650px]">
+      <div className="h-screen w-[450px] md:w-[650px] flex items-center">
         <Board />
       </div>
     </div>
