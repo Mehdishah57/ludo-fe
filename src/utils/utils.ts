@@ -55,3 +55,16 @@ export const getBackgroundColorClassName = (quadrant: QuadrantType) => {
     }
     return colors[quadrant]
 }
+
+/**
+ * This function returns the bordercolor className for quadrant
+ */
+export const getBorderColorClassName = (quadrant: QuadrantType) => {
+    const colors = {
+        [QuadrantType.Yellow]: "border-yellow-500",
+        [QuadrantType.Green]: "border-green-500",
+        [QuadrantType.Blue]: "border-blue-500",
+        [QuadrantType.Red]: "border-red-500"
+    }
+    return colors[quadrant]
+}

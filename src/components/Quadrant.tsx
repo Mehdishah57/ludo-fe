@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import classNames from "classnames"
 
-import { getBackgroundColorClassName, getCellAddresses, getSafeQuadrantCells } from "../utils/utils"
+import { getBackgroundColorClassName, getBorderColorClassName, getCellAddresses, getSafeQuadrantCells } from "../utils/utils"
 
 import { QuadrantType } from "../constants/constants"
 
@@ -21,6 +21,21 @@ const Quadrant: React.FC<IQuadrantProps> = ({
             { "rotate-[0deg]": QuadrantType.Blue === type },
             { "rotate-[270deg]": QuadrantType.Red === type },
         )}>
+
+            <div 
+                className={classNames(
+                    "w-0 h-0 absolute border-b-[82px] border-l-[82px] border-l-transparent border-r-transparent border-r-[82px]",
+                    "left-[75%] bottom-[75%]",
+                    getBorderColorClassName(type)
+                )}
+            >
+                {cells.slice(address.won[0], address.won[1]).map(num => <div
+                    id={num.toString()}
+                    key={num}
+                    className="flex w-[15px] h-[15px] z-10 rounded-full absolute bottom-[-52px] left-[-17.5px]"
+                />)}
+            </div>
+
             {/* Safe House */}
             <div className={classNames(
                 "w-[75%] h-[75%] absolute left-0 bottom-0 flex justify-center items-center",
@@ -51,7 +66,7 @@ const Quadrant: React.FC<IQuadrantProps> = ({
                 )}></div>)}
             </div>
 
-            <div className="flex flex-col right-[-17.5px] h-[75%] bottom-0 absolute">
+            <div className="flex flex-col right-[-17.5px] h-[75%] bottom-0 absolute z-10">
                 {cells.slice(address.home[0], address.home[1]).map((num, idx) => <div 
                     key={num} 
                     id={num.toString()} 
